@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Argonauts News</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Arimo:400,700|Roboto:400,700&display=swap" rel="stylesheet">
+    <link rel="icon" href="logoargonauts.png">
+    <link href="https://fonts.googleapis.com/css?family=Ramabhadra|Roboto:400,700&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
+    <header>
+        
+        <input type="text" placeholder="Pesquisar..." onclick="pesquisar()">
+        
+        <button>Pesquisar</button>
+        
+
+        <div class="box-header">
+            <a href="index.html"><img src="logoargonauts.png" alt="logo"></a>
+
+        </div>
+    </header>
+    <main>
+        
+        <div id="content-noticia">
+
+
+
+        </div>
+    </main>
+
+    <footer>
+        <a href="https://newsapi.org/"><h2>News API</h2></a>
+    </footer>
+
+
+    <script>
+
+        var req = new XMLHttpRequest();
+        var url = "https://newsapi.org/v2/top-headlines?language=pt&apiKey=f843e0a78b604ca6ba63c3475e262252";
+
+        function processaDados(dados) {
+            var saida = '';
+            for (let i = 0; i < 20; i++) {
+                saida += `<div class="box-noticia">
+                                            <a href="${dados[i].url}"><img src="${dados[i].urlToImage}" alt="imagem noticia" class="imagem-noticia"></a>
+                                            <a href="${dados[i].url}" class="link-titulo"><h2 class="titulo-noticia">${dados[i].title}</h2></a>
+                                            <p class="paragrafo-noticia">${dados[i].description}</p>
+                                            <a href="${dados[i].url}" class="leia-mais">Leia Mais</a>
+                                            <br>
+                                            <div class="borda"></div>
+                                            
+                                        </div>`
+            }
+            document.getElementById('content-noticia').innerHTML = saida;
+        }
+        function getData() {
+            req.onload = function () {
+                var dados = JSON.parse(req.responseText);
+                processaDados(dados.articles);
+            }
+            req.open('GET', url, true);
+            req.send();
+        }
+        window.addEventListener('load', getData());
+
+        
+
+
+    </script>
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,168 @@
+*{
+    padding: 0;
+    margin: 0;
+ }
+ a{
+     text-decoration: none;
+     
+ }
+ 
+ 
+ /* Cabeçalho*/
+ .box-header{
+     margin: 0 auto;
+     
+ }
+ 
+ header{
+     display: flex;
+     background: #a9d0f5;    
+     width: 100%;
+     height: 25%;
+     margin: 0 auto;
+     flex: 1;
+ }
+ 
+ header input{
+     border: radius #0B2F3A 2px;
+     height: 40px;
+     align-self: flex-start;
+     display: inline-block;
+     float: left;
+     margin: 40px 10px;
+ }
+ header button{
+     width: 70px;
+     margin: 40px 0;
+     height: 50px;
+     align-self: flex-start;
+     font-size: 0.8em;
+     background-color: #013ADF;
+     color: white;
+     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+ }
+ 
+ header  img{
+     
+     align-self: center;
+      width: 120px;
+ 
+ }
+ /*
+ Espaço das Noticias 
+ */
+.box-noticia{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-bottom: solid 2px #6e6e6e; 
+}
+.box-noticia img{
+    margin: 0 0 10px 0;
+}
+.imagem-noticia{
+    width: 100%;
+    margin: 10px 0 0 0;
+    height: 100%
+
+}
+.link-titulo{
+    
+    
+
+}
+.titulo-noticia{
+    font-family: Roboto,Arial, Helvetica, sans-serif;
+    color: #0B2F3A;
+    font-size: 2em;        
+}
+
+.paragrafo-noticia{
+    font-family: Roboto,Arial, Helvetica, sans-serif;
+    font-size: 1.4em;
+    color: #1c1c1c;
+    margin: 10px 0 0 0;
+}
+.leia-mais{
+    font-family: Roboto,Arial, Helvetica, sans-serif;
+    font-size: 1.8em;
+    color:#0B2F3A;
+    margin: 10px;
+    background-color: #E0F8F1;
+
+}
+
+.titulo-noticia:hover{
+    color: #424242;
+}
+.leia-mais:hover{
+    color: #424242;
+}
+
+
+ /*
+ Roda pé 
+ */
+ footer{
+     background-color: darkblue;
+     font-size: 1.4em;
+     text-align: center;
+     color: white;
+     font-family: 'Roboto',Arial,Helvetica,sans-serif;
+ }
+ footer h2{
+     color: white;
+ }
+ footer h2:hover{
+     color: #0B2F3A;
+ }
+
+
+
+ @media (min-width: 640px){
+     .box-header{
+         margin-left: 20%;
+     }
+
+    .box-noticia{
+       
+        width: 47%;
+        display: inline-block;
+        margin: 10px;
+        
+        
+    }
+
+
+ }
+ /*Voce precisa mexer aqui*/
+ @media (min-width: 1200px){
+     .box-header{
+         margin-left: 35%;
+     }
+    .box-noticia{
+        flex-wrap: wrap;
+        flex: 1;
+        width: 33%;
+        display: inline-flex;
+        
+        margin: 5px auto;
+        
+    }
+    .box-noticia h2{
+        margin: 30px;
+    }
+    .box-noticia img{
+        height: 92%;
+        margin: 30px;
+        width: 95%;
+    }
+    .box-noticia p{
+        margin: 30px;
+    }
+    
+
+
+
+
+ }
